@@ -2,4 +2,4 @@
 ## Hauptstädte-Quiz: Europa
 "Hauptstädte-Quiz: Europa" is a quiz about european capitals I made for my niece.
 
-[![app](./img/screenshot.jpg)](https://european-capitals-quiz.herokuapp.com){:target="_blank"}
+[![app](./img/screenshot.jpg)](https://european-capitals-quiz.herokuapp.com)
