@@ -78,9 +78,9 @@ def grade(perc):
         grade = "gut! ( ͡° ͜ ͡°)"
     elif perc >= 50:
         grade = "ok! (~ • ᴥ •)~"
-    elif perc > 40:
+    elif perc > 30:
         grade = "nicht so gut! (｡ŏ﹏ŏ)"
-    elif perc > 25:
+    elif perc > 20:
         grade = "schlecht! (ɔ ᴗ_ᴗ)ɔ" 
     else:
         grade = "traurig! (ɔ •︵•)ɔ" 
@@ -138,7 +138,6 @@ if start:
 
 if next:
     new()
-
 
 #########################################################################
 if __name__ == '__main__':
