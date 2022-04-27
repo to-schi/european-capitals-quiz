@@ -30,14 +30,18 @@ next = second.button("Nächste Frage")
 
 # Dictionary of all countries and capitals in Europe
 europe = {
-    'Niederlande' : 'Amsterdam', 'Andorra' : 'Andorra', 'Griechenland' : 'Athen', 'Serbien' : 'Belgrad', 'Deutschland' : 'Berlin', 'Schweiz' : 'Bern', 
-    'Slowakei' : 'Bratislava', 'Belgien' : 'Brüssel', 'Ungarn' : 'Budapest', 'Rumänien' : 'Bukarest', 'Republik Moldau' : 'Kischinau', 'San Marino' : 'San Marino', 
-    'Irland' : 'Dublin', 'Finnland' : 'Helsinki', 'Ukraine' : 'Kiew', 'Dänemark' : 'Kopenhagen', 'Portugal' : 'Lissabon', 
-    'Slowenien' : 'Ljubljana', 'Vereinigtes Königreich' : 'London', 'Luxemburg' : 'Luxemburg', 'Spanien' : 'Madrid', 'Belarus' : 'Minsk', 'Monaco' : 'Monaco', 
-    'Russland' : 'Moskau', 'Republik Zypern' : 'Nikosia', 'Norwegen' : 'Oslo', 'Frankreich' : 'Paris', 'Montenegro' : 'Podgorica', 'Tschechien' : 'Prag', 'Kosovo' : 'Pristina',
-    'Island' : 'Reykjavik', 'Lettland' : 'Riga', 'Italien' : 'Rom', 'Bosnien und Herzegowina' : 'Sarajevo', 'Nordmazedonien' : 'Skopje', 'Bulgarien' : 'Sofia', 
-    'Schweden' : 'Stockholm', 'Estland' : 'Tallinn', 'Albanien' : 'Tirana', 'Liechtenstein' : 'Vaduz', 'Malta' : 'Valletta', 'Vatikan' : 'Vatikanstadt', 
-    'Litauen' : 'Vilnius', 'Polen' : 'Warschau', 'Österreich' : 'Wien', 'Kroatien' : 'Zagreb'
+    'Niederlande' : 'Amsterdam', 'Andorra' : 'Andorra', 'Griechenland' : 'Athen', 'Serbien' : 'Belgrad',
+    'Deutschland' : 'Berlin', 'Schweiz' : 'Bern', 'Slowakei' : 'Bratislava', 'Belgien' : 'Brüssel',
+    'Ungarn' : 'Budapest', 'Rumänien' : 'Bukarest', 'Republik Moldau' : 'Kischinau', 'San Marino' : 'San Marino',
+    'Irland' : 'Dublin', 'Finnland' : 'Helsinki', 'Ukraine' : 'Kiew', 'Dänemark' : 'Kopenhagen',
+    'Portugal' : 'Lissabon', 'Slowenien' : 'Ljubljana', 'Vereinigtes Königreich' : 'London',
+    'Luxemburg' : 'Luxemburg', 'Spanien' : 'Madrid', 'Belarus' : 'Minsk', 'Monaco' : 'Monaco',
+    'Russland' : 'Moskau', 'Republik Zypern' : 'Nikosia', 'Norwegen' : 'Oslo', 'Frankreich' : 'Paris',
+    'Montenegro' : 'Podgorica', 'Tschechien' : 'Prag', 'Kosovo' : 'Pristina', 'Island' : 'Reykjavik',
+    'Lettland' : 'Riga', 'Italien' : 'Rom', 'Bosnien und Herzegowina' : 'Sarajevo', 'Nordmazedonien' : 'Skopje',
+    'Bulgarien' : 'Sofia', 'Schweden' : 'Stockholm', 'Estland' : 'Tallinn', 'Albanien' : 'Tirana',
+    'Liechtenstein' : 'Vaduz', 'Malta' : 'Valletta', 'Vatikan' : 'Vatikanstadt', 'Litauen' : 'Vilnius',
+    'Polen' : 'Warschau', 'Österreich' : 'Wien', 'Kroatien' : 'Zagreb'
     }
 
 # initiate necessary session_state-variables #########
@@ -57,6 +61,7 @@ if 'last' not in st.session_state:
 # 'number' stores the number of countries remaining:
 if 'number' not in st.session_state:
     st.session_state['number'] = len(st.session_state['countries'])-1
+# select a random item out of the coutries list:
 x = randint(0, st.session_state['number'])
 # 'country' stores the country in the current question:
 if 'country' not in st.session_state:
@@ -81,9 +86,9 @@ def grade(perc):
     elif perc > 30:
         grade = "nicht so gut! (｡ŏ﹏ŏ)"
     elif perc > 20:
-        grade = "schlecht! (ɔ ᴗ_ᴗ)ɔ" 
+        grade = "schlecht! (ɔ ᴗ_ᴗ)ɔ"
     else:
-        grade = "traurig! (ɔ •︵•)ɔ" 
+        grade = "traurig! (ɔ •︵•)ɔ"
     return grade
 
 def reset():
@@ -124,7 +129,7 @@ def main():
 def quit():
     try:
         perc = st.session_state['right'] * 100 / st.session_state['questions']
-    except: 
+    except:
         perc = 0
     second.write(f"Du hast {st.session_state['right']} von {st.session_state['questions']} Fragen richtig beantwortet ({int(round(perc,0))} Prozent).")
     second.write(f"Das ist {grade(perc)}")
