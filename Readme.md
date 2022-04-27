@@ -1,5 +1,6 @@
-[![Heroku](https://github.com/dhalenok/pyheroku-badge/raw/master/img/deployed.svg)](https://dashboard.heroku.com/apps/hauptstaedte-quiz-europa)
+[![Heroku](https://github.com/dhalenok/pyheroku-badge/raw/master/img/deployed.svg)](https://hauptstaedte-quiz-europa.herokuapp.com/)
 ## Hauptstädte-Quiz: Europa
 "Hauptstädte-Quiz: Europa" is a quiz about european capitals I made for my niece (in German).
 
-[![app](./img/screenshot.jpg)](https://dashboard.heroku.com/apps/hauptstaedte-quiz-europa)
+[![app](./img/screenshot.jpg)](https://hauptstaedte-quiz-europa.herokuapp.com/)
+
